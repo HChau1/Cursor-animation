@@ -1,0 +1,64 @@
+body{
+    margin: 0;
+    height: 100vh;
+    /* cursor: none; */
+    background-color: rgb(30, 30, 30);
+}
+
+.cursor{
+    height: 20px;
+    width: 20px;
+    border: 1px solid white;
+    border-radius: 50%;
+    position: absolute;
+    transition-duration: 100ms;
+    transition-timing-function: ease-out;
+    animation: curAni1 1s infinite alternate-reverse;
+}
+
+.cursor::after{
+    content: "";
+    height: 20px;
+    width: 20px;   
+    position: absolute;
+    border: 4px solid rgb(106, 211, 211);
+    border-radius: 50%;
+    opacity: .5;
+    top:-4px;
+    left:-4px;
+    animation: curAni2 1s infinite alternate-reverse;
+}
+
+@keyframes curAni1 {
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(1.6);
+    }
+}
+@keyframes curAni2 {
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(.8);
+    }
+}
+.expand{
+    animation: curAni3 .5s forwards;
+    border: 2px solid rgb(203, 32, 32);
+}
+
+@keyframes curAni3 {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(3.5);
+    }
+    100%{
+        transform: scale(1);
+        opacity: 0;
+    }
+}
